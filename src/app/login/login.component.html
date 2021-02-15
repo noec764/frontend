@@ -1,0 +1,22 @@
+<div class="container justify-content-center">
+  <br>
+  <h2>Veuillez vous Identifier:</h2>
+  <form (ngSubmit)="onClick()">
+    <table>
+      <tr>
+        <td>Entrez votre login:</td>
+        <td><input name="login" [(ngModel)]="login" type="text"></td>
+      </tr>
+      <tr>
+        <td>Entrez votre mot de passe:</td>
+        <td><input name="password" [(ngModel)]="password" type="password"></td>
+      </tr>
+      <tr>
+        <input type="submit" value="Se connecter">
+      </tr>
+    </table>
+  </form >
+  <div class="alert alert-danger" role="alert" [hidden]="isHidden()">
+    {{errormessage}}
+  </div>
+</div>
