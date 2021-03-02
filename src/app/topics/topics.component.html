@@ -9,33 +9,33 @@
     <!-- Nom Column -->
     <ng-container matColumnDef="nom">
       <th mat-header-cell *matHeaderCellDef   mat-sort-header> Nom </th>
-      <td mat-cell *matCellDef="let element"> {{element.nom}}
-      <a class="stretched-link"
-         routerLink="/topics/{{element.idCours}}">{{element.titreTopic}}</a></td>
+      <td mat-cell *matCellDef="let element"> {{element.titreTopic}}
+        <a class="stretched-link"
+           routerLink="/posts/{{element.idTopic}}">{{element.titreTopic}}</a></td>
     </ng-container>
 
     <!-- IdCours Column -->
     <ng-container matColumnDef="idCours">
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Identifiant du Cours </th>
-      <td mat-cell *matCellDef="let element"> {{element.idCours}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.idTopic}} </td>
     </ng-container>
 
     <!-- nbTopic Column -->
     <ng-container matColumnDef="nbTopic">
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Nombre de Sujet </th>
-      <td mat-cell *matCellDef="let element"> {{element.nbTopics}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.nbPosts}} </td>
     </ng-container>
 
     <!-- nbPost Column -->
     <ng-container matColumnDef="nbPost">
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Nombre de Post </th>
-      <td mat-cell *matCellDef="let element"> {{element.nbPosts}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.dateDernierMessage}} </td>
     </ng-container>
 
     <!-- dateDernierMessage Column -->
     <ng-container matColumnDef="dateDernierMessage">
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Date du dernier Post </th>
-      <td mat-cell *matCellDef="let element"> {{element.dateDernierMessage}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.idCours}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -24,20 +24,25 @@ export class LoginComponent implements OnInit {
     //Envoie le bon format de donnée dans le message, on peut mettre n'importe quoi dedans
     const formdata = new FormData();
     formdata.append("login", this.login);
-    formdata.append("mdp", this.password);
+    formdata.append("password", this.password);
 
 
     this.service.sendMessage("checkLogin", formdata).subscribe(
       (message) => {
         console.log(message)
+        if (message.status === 'error') {
+          this.errormessage = 'Le login ou le mot de passe est incorrect';
+        } else {
+
+          this.router.navigateByUrl('/cours');
+        }
       }
     )
-    this.router.navigateByUrl('/cours');
     console.log('Login: ' + this.login);
     console.log('Password: ' + this.password);
   }
 
-  constructor(private service: MessageService,private router: Router) {
+  constructor(private service: MessageService, private router: Router) {
   }
 
 
