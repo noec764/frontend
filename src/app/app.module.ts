@@ -13,6 +13,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TopicsComponent } from './topics/topics.component';
+import { PostComponent } from './post/post.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 
@@ -23,7 +25,9 @@ import { TopicsComponent } from './topics/topics.component';
     NavbarComponent,
     LoginComponent,
     CoursComponent,
-    TopicsComponent
+    TopicsComponent,
+    PostComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
