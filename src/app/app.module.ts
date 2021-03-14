@@ -15,6 +15,12 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TopicsComponent } from './topics/topics.component';
 import { PostComponent } from './post/post.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { CreateTopicComponent } from './create-topic/create-topic.component';
+import { CreateTopicDialogComponent } from './create-topic-dialog/create-topic-dialog.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -27,7 +33,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     CoursComponent,
     TopicsComponent,
     PostComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    CreateTopicComponent,
+    CreateTopicDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +46,13 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
+    MatButtonModule,
     MatSortModule,
-    CKEditorModule
+    CKEditorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

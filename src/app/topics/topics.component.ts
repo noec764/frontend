@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
@@ -15,9 +15,9 @@ export class TopicsComponent implements OnInit {
   breadcrumb: BreadcrumbData[];
   displayedColumns: string[] = [ 'titreTopic', 'nbPosts', 'dateDernierMessage'];
   dataSource = new MatTableDataSource<topic>();
-  @ViewChild(MatPaginator) paginator: any;
-  @ViewChild(MatSort) sort: any;
-  idCours : any;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  idCours ='';
 
   constructor(private service: MessageService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.breadcrumb = [
@@ -50,7 +50,6 @@ export class TopicsComponent implements OnInit {
 }
 
 export class topic {
-
   idTopic: any;
   titreTopic: any;
   nbPosts: any;
