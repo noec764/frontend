@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlbase: "http://127.0.0.1/forum/forum-angular-php/backend/"
+  urlbase: "http://127.0.0.1:3000/"
 };
 
 /*

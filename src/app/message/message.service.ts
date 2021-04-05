@@ -18,11 +18,8 @@ export class MessageService {
   constructor(private http: HttpClient) {
   }
 
-  sendMessage(url:any, data:any): Observable<PhpData> {
-    return this.http.post<PhpData>(
-      environment.urlbase+url+".php",
-      data,
-      {withCredentials: true}
-    )
-  };
+  sendMessage(url: string, data: any): Observable<PhpData>{
+    return this.http.post<PhpData>(environment.urlbase.concat(url), data, {withCredentials: true});
+  }
+
 }
