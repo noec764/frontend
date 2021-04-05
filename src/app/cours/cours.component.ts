@@ -24,13 +24,13 @@ export class CoursComponent implements OnInit {
 
 
   ngOnInit() {
-    //Envoie le bon format de donnée dans le message, on peut mettre n'importe quoi dedans
-    const formdata = new FormData();
-    this.service.sendMessage("getCours", formdata).subscribe(
+
+
+    this.service.sendMessage("getCours", {}).subscribe(
       message => {
         console.log(message);
         if (message.status === 'error') {
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('login');
         } else {
           this.dataSource.data = message.data;
           this.dataSource.paginator = this.paginator;

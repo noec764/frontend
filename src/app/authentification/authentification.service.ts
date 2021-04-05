@@ -15,13 +15,8 @@ export class AuthentificationService {
 
   sendAuthentification(login: string, password: string) {
     let errormessage = '';
-    //Envoie le bon format de donnée dans le message, on peut mettre n'importe quoi dedans
-    const formdata = new FormData();
-    formdata.append("login", login);
-    formdata.append("password",password);
 
-
-    this.service.sendMessage("checkLogin", formdata).subscribe(
+    this.service.sendMessage("checkLogin", {login: login,password:password}).subscribe(
       (message) => {
         console.log(message)
         if (message.status === 'error') {
@@ -29,7 +24,7 @@ export class AuthentificationService {
         } else {
           this.login=login;
           this.password=password
-          this.router.navigateByUrl('/cours');
+          this.router.navigateByUrl('cours');
         }
       }
     )

@@ -24,21 +24,10 @@ export class CreateTopicDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // Hide(): boolean {
-  //   if (this.data.topic != '') {
-  //     return true;
-  //   }
-  //   return false;
-  // }
+
 
   onClick() {
-
-    const formdata = new FormData();
-    console.log("idCours :", this.data.idCours);
-    console.log('newTopic', this.data.topic);
-    formdata.append('idCours', this.data.idCours);
-    formdata.append('newTopic', this.data.topic)
-    this.messageService.sendMessage('saveNewTopic', formdata).subscribe(
+    this.messageService.sendMessage('saveNewTopic', {idCours:this.data.idCours,newTopic:this.data.topic}).subscribe(
       message => {
         console.log(message);
         if (message.status === 'error') {
@@ -48,10 +37,6 @@ export class CreateTopicDialogComponent implements OnInit {
       });
 
   }
-
-  // isHidden(): boolean {
-  //   return this.errormessage.length < 2;
-  // }
 
 }
 
